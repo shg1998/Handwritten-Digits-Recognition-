@@ -46,12 +46,13 @@ for n in range(num_of_test_images):
         image[i] = int.from_bytes(test_images_file.read(1), 'big') / 256
     
     label_value = int.from_bytes(test_labels_file.read(1), 'big')
+    
     label = np.zeros((10, 1))
     label[label_value, 0] = 1
     
     test_set.append((image, label))
-
+    
 
 # Plotting an image
-show_image(train_set[1][0])
-plt.show()
+#  show_image(train_set[0][0])
+#  plt.show()
